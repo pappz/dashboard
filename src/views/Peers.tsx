@@ -343,6 +343,11 @@ export const Peers = () => {
     storeFilterState("peerFilter", "quickFilter", value);
   };
 
+  const openTerminal = (record: PeerDataTable) => {
+    console.log(record);
+    window.open("/terminal/"+record.id);
+  };
+
   const showConfirmDelete = (record: PeerDataTable) => {
     setPeerToAction(record);
     let peerRoutes: string[] = [];
@@ -1032,6 +1037,25 @@ export const Peers = () => {
                                 }
                               >
                                 Delete
+                              </Button>
+                            );
+                          }}
+                        />
+                        <Column
+                          title="Terminal"
+                          align="center"
+                          render={(text, record, index) => {
+                            return (
+                              <Button
+                                type="text"
+                                style={{
+                                  color: "rgba(210, 64, 64, 0.85)",
+                                }}
+                                onClick={() =>
+                                  openTerminal(record as PeerDataTable)
+                                }
+                              >
+                                Terminal
                               </Button>
                             );
                           }}

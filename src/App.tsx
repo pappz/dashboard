@@ -22,6 +22,8 @@ import {SecureLoading} from "./components/Loading";
 import DNS from "./views/DNS";
 import Activity from "./views/Activity";
 import Settings from "./views/Settings";
+import Terminal from "./views/Terminal";
+
 
 
 const {Header, Content} = Layout;
@@ -109,6 +111,7 @@ function App() {
                                 <Route path="/dns" component={withOidcSecure(DNS)}/>
                                 <Route path="/activity" component={withOidcSecure(Activity)}/>
                                 <Route path="/settings" component={withOidcSecure(Settings)}/>
+                                <Route path="/terminal" component={withOidcSecure(Terminal)}/>
                             </Switch>
                         </Content>
                         <FooterComponent/>
